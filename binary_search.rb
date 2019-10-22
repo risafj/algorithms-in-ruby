@@ -12,7 +12,7 @@ def slice_and_search(arr, id)
   id_at_half = arr[half_size - 1][:id]
 
   if id_at_half == id
-    left.last[:name]
+    left.last
   elsif id_at_half < id
     slice_and_search(right, id)
   elsif id_at_half > id
