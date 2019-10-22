@@ -1,6 +1,6 @@
 require_relative 'people'
 
-def serial_search(id)
+def serial_search(id:)
   PEOPLE.each do |p|
     return p if p[:id] == id
   end
@@ -8,4 +8,4 @@ def serial_search(id)
   'Could not find person'
 end
 
-puts serial_search(5)
+# puts serial_search(id: 1000)
