@@ -1,23 +1,20 @@
 require_relative 'people'
+require 'pry'
 
-def binary_search(id)
-  return 'Could not find person' if id > PEOPLE.size
+def binary_search(arr: PEOPLE, min: 0, max: PEOPLE.length - 1, id:)
+  middle_index = ((min + max) / 2).round
+  value_at_half = arr[middle_index]
+  # binding.pry
 
-  slice_and_search(PEOPLE, id)
-end
-
-def slice_and_search(arr, id)
-  half_size = (arr.count/2.0).round
-  left, right = arr.each_slice(half_size).to_a
-  id_at_half = arr[half_size - 1][:id]
-
-  if id_at_half == id
-    left.last
-  elsif id_at_half < id
-    slice_and_search(right, id)
-  elsif id_at_half > id
-    slice_and_search(left, id)
+  return value_at_half if value_at_half[:id] == id
+  
+  if id > value_at_half[:id]
+    binary_search(min: middle_index + 1, max: max, id: id)
+  elsif id < value_at_half[:id]
+    binary_search(max: middle_index -1, min: min, id: id)
+  else
+    raise StandardError, "min is #{min}, max is #{max}, value_at_half is #{value_at_half}"
   end
 end
 
-puts binary_search(5)
+# puts binary_search(id: 10_000)
