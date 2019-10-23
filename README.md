@@ -15,7 +15,8 @@ find      0.001608   0.000010   0.001618 (  0.001619)
 ```
 
 ## Sorting
-TBD
+* Bubble sort
+* Bucket sort (coming soon)
 
 # References
 https://www.bbc.co.uk/bitesize/topics/z7d634j
