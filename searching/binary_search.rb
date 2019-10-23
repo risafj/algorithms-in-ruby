@@ -1,7 +1,7 @@
 require_relative 'people'
 require 'pry'
 
-def binary_search(arr: PEOPLE, min: 0, max: PEOPLE.length - 1, id:)
+def binary_search(arr: @people, min: 0, max: @people.length - 1, id:)
   middle_index = ((min + max) / 2).round
   value_at_half = arr[middle_index]
   return value_at_half if value_at_half[:id] == id

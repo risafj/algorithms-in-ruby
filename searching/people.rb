@@ -1,7 +1,7 @@
 require 'faker'
 
-PEOPLE = []
+@people = []
 
 (1..100_000).each do |n|
-  PEOPLE << { id: n, name: Faker::Name.name }
+  @people << { id: n, name: Faker::Name.name }
 end

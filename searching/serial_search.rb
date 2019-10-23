@@ -1,7 +1,7 @@
 require_relative 'people'
 
 def serial_search(id:)
-  PEOPLE.each do |p|
+  @people.each do |p|
     return p if p[:id] == id
   end
 
