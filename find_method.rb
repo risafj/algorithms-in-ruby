@@ -7,4 +7,4 @@ def find_by_id(id:)
   PEOPLE.find {|p| p[:id] == id}
 end
 
-puts find_by_id(id: 1000)
+# puts find_by_id(id: 1000)
