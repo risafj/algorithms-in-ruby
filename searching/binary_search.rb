@@ -1,5 +1,4 @@
 require_relative 'people'
-require 'pry'
 
 def binary_search(arr: @people, min: 0, max: @people.length - 1, id:)
   middle_index = ((min + max) / 2).round
