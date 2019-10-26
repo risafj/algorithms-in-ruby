@@ -23,7 +23,7 @@ class BubbleSorter
   end
 end
 
-sorter = BubbleSorter.new(@numbers)
-p "Pre-sort: #{sorter.numbers}"
-sorter.bubble_sort
-p "Post-sort: #{@numbers}"
+# sorter = BubbleSorter.new(@numbers)
+# p "Pre-sort: #{sorter.numbers}"
+# sorter.bubble_sort
+# p "Post-sort: #{@numbers}"
