@@ -1,4 +1,5 @@
 require_relative 'numbers'
+
 class BubbleSorter
   attr_reader :numbers
 
@@ -20,10 +21,11 @@ class BubbleSorter
     end
 
     bubble_sort if changed == true
+
+    numbers
   end
 end
 
 # sorter = BubbleSorter.new(@numbers)
 # p "Pre-sort: #{sorter.numbers}"
-# sorter.bubble_sort
-# p "Post-sort: #{@numbers}"
+# p "Post-sort: #{sorter.bubble_sort}"
