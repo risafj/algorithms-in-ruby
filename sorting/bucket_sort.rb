@@ -1,4 +1,5 @@
 require_relative 'numbers'
+require_relative 'bubble_sort'
 
 class BucketSorter
   attr_reader :buckets, :array_of_numbers
@@ -10,6 +11,10 @@ class BucketSorter
 
   def bucket_sort
     sort_numbers_into_buckets
+
+    # Using bubble sort inside each bucket until we implement a better sorting algorithm.
+    buckets.each { |b| BubbleSorter.new(b.content).bubble_sort }
+    buckets.map(&:content).reduce([], :concat)
   end
 
   private
@@ -52,6 +57,4 @@ class BucketSorter
 end
 
 sorter = BucketSorter.new(array_of_numbers: @numbers)
-sorter.bucket_sort
-
-print sorter.buckets
+puts sorter.bucket_sort
