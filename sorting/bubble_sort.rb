@@ -1,28 +1,27 @@
-require_relative 'numbers'
-
 class BubbleSorter
-  attr_reader :numbers
+  attr_reader :array_of_numbers
 
-  def initialize(numbers)
-    @numbers = numbers
+  def initialize(array_of_numbers)
+    # Dup to avoid modifying the original array
+    @array_of_numbers = array_of_numbers.dup
   end
 
   def bubble_sort
     changed = false
 
-    (numbers.count - 1).times do |n|
-      first_value = numbers[n]
-      second_value = numbers[n + 1]
+    (array_of_numbers.count - 1).times do |n|
+      first_value = array_of_numbers[n]
+      second_value = array_of_numbers[n + 1]
       next if first_value <= second_value
 
-      numbers[n] = second_value
-      numbers[n + 1] = first_value
+      array_of_numbers[n] = second_value
+      array_of_numbers[n + 1] = first_value
       changed = true
     end
 
     bubble_sort if changed == true
 
-    numbers
+    array_of_numbers
   end
 end
 
