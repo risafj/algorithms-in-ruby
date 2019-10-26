@@ -1,21 +1,29 @@
 require_relative 'numbers'
+class BubbleSorter
+  attr_reader :numbers
 
-def bubble_sort
-  changed = false
-
-  (@numbers.count - 1).times do |n|
-    first_value = @numbers[n]
-    second_value = @numbers[n + 1]
-    next if first_value <= second_value
-
-    @numbers[n] = second_value
-    @numbers[n + 1] = first_value
-    changed = true
+  def initialize(numbers)
+    @numbers = numbers
   end
 
-  bubble_sort if changed == true
+  def bubble_sort
+    changed = false
+
+    (numbers.count - 1).times do |n|
+      first_value = numbers[n]
+      second_value = numbers[n + 1]
+      next if first_value <= second_value
+
+      numbers[n] = second_value
+      numbers[n + 1] = first_value
+      changed = true
+    end
+
+    bubble_sort if changed == true
+  end
 end
 
-p "Pre-sort: #{@numbers}"
-bubble_sort
+sorter = BubbleSorter.new(@numbers)
+p "Pre-sort: #{sorter.numbers}"
+sorter.bubble_sort
 p "Post-sort: #{@numbers}"
