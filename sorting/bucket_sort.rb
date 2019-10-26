@@ -13,8 +13,7 @@ class BucketSorter
     sort_numbers_into_buckets
 
     # Using bubble sort inside each bucket until we implement a better sorting algorithm.
-    buckets.each { |b| BubbleSorter.new(b.content).bubble_sort }
-    buckets.map(&:content).reduce([], :concat)
+    buckets.reduce([]) {|resulting_arr, bucket| resulting_arr.concat(BubbleSorter.new(bucket.content).bubble_sort) }
   end
 
   private
