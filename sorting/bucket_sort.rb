@@ -1,30 +1,57 @@
 require_relative 'numbers'
-require 'pry'
 
-def bucket_sort(bucket_number = 5)
-  buckets = Bucket.create_buckets(bucket_number: bucket_number, min_number: @numbers.min, max_number: @numbers.max)
-end
+class BucketSorter
+  attr_reader :buckets, :array_of_numbers
 
-class Bucket
-  attr_reader :min, :max
-
-  def initialize(min:, max:)
-    @min = min
-    @max = max
+  def initialize(bucket_number: 5, array_of_numbers:)
+    @buckets = create_buckets(bucket_number, array_of_numbers)
+    @array_of_numbers = array_of_numbers
   end
 
-  def self.create_buckets(bucket_number:, min_number:, max_number:)
-    interval = (max_number - min_number)/bucket_number
+  def bucket_sort
+    sort_numbers_into_buckets
+  end
 
+  private
+
+  def create_buckets(bucket_number, array_of_numbers)
+    smallest_number = array_of_numbers.min
+    largest_number = array_of_numbers.max
     buckets = []
+    interval = (largest_number - smallest_number)/bucket_number
+
     bucket_number.times do |n|
-      min = min_number + interval * n
+      min = smallest_number + interval * n
       # If last bucket, max should be the max number. Otherwise, add the interval.
-      max = n == bucket_number - 1 ? max_number : (min_number + interval * (n + 1) - 1)
+      max = n == bucket_number - 1 ? largest_number : (smallest_number + interval * (n + 1) - 1)
       buckets << Bucket.new(min: min, max: max)
     end
     buckets
   end
+
+  def sort_numbers_into_buckets
+    array_of_numbers.each do |n|
+      buckets.each do |b|
+        next unless n >= b.min && n <= b.max
+
+        b.content << n
+        break
+      end
+    end
+  end
+
+  class Bucket
+    attr_reader :min, :max, :content
+
+    def initialize(min:, max:, content: [])
+      @min = min
+      @max = max
+      @content = content
+    end
+  end
 end
 
-bucket_sort
+sorter = BucketSorter.new(array_of_numbers: @numbers)
+sorter.bucket_sort
+
+print sorter.buckets
