@@ -16,7 +16,14 @@ find      0.001608   0.000010   0.001618 (  0.001619)
 
 ## Sorting
 * Bubble sort
-* Bucket sort (coming soon)
+* Bucket sort
+
+### Benchmark
+```
+              user     system      total        real
+bubble    9.137935   0.017575   9.155510 (  9.175867)
+bucket    1.779165   0.004595   1.783760 (  1.789324)
+```
 
 # References
 https://www.bbc.co.uk/bitesize/topics/z7d634j
