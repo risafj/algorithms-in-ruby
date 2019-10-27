@@ -17,6 +17,7 @@ find      0.001608   0.000010   0.001618 (  0.001619)
 ## Sorting
 * Bubble sort
 * Bucket sort
+* Next: Insertion Sort (https://www.geeksforgeeks.org/insertion-sort/)
 
 ### Benchmark
 ```
