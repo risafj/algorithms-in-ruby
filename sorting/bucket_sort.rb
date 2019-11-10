@@ -1,5 +1,5 @@
 require_relative 'numbers'
-require_relative 'bubble_sort'
+require_relative 'insertion_sort'
 
 class BucketSorter
   attr_reader :buckets, :array_of_numbers
@@ -55,5 +55,5 @@ class BucketSorter
   end
 end
 
-# sorter = BucketSorter.new(array_of_numbers: @numbers)
-# puts sorter.bucket_sort
+sorter = BucketSorter.new(array_of_numbers: @numbers)
+puts sorter.bucket_sort

@@ -1,3 +1,5 @@
+require_relative 'numbers'
+
 class BubbleSorter
   attr_reader :array_of_numbers
 

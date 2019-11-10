@@ -1,5 +1,4 @@
 require_relative 'numbers'
-require 'pry'
 
 class InsertionSorter
   attr_reader :array_of_numbers
