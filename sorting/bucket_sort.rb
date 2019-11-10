@@ -12,8 +12,8 @@ class BucketSorter
   def bucket_sort
     sort_numbers_into_buckets
 
-    # Using bubble sort inside each bucket until we implement a better sorting algorithm.
-    buckets.reduce([]) {|resulting_arr, bucket| resulting_arr.concat(BubbleSorter.new(bucket.content).bubble_sort) }
+    # Using insertion sort inside each bucket.
+    buckets.reduce([]) {|resulting_arr, bucket| resulting_arr.concat(InsertionSorter.new(bucket.content).insertion_sort) }
   end
 
   private
