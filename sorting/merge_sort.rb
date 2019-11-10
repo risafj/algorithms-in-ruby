@@ -38,5 +38,5 @@ class MergeSorter
   end
 end
 
-sorter = MergeSorter.new(@numbers)
-p sorter.merge_sort
+# sorter = MergeSorter.new(@numbers)
+# p sorter.merge_sort

@@ -55,5 +55,5 @@ class BucketSorter
   end
 end
 
-sorter = BucketSorter.new(array_of_numbers: @numbers)
-puts sorter.bucket_sort
+# sorter = BucketSorter.new(array_of_numbers: @numbers)
+# puts sorter.bucket_sort
