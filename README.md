@@ -18,7 +18,8 @@ find      0.001608   0.000010   0.001618 (  0.001619)
 * Bubble sort
 * Bucket sort
 * Insertion sort
-* Next: selection sort, merge sort, quick sort, heap sort
+* Selection sort
+* Next: merge sort, quick sort, heap sort
 
 
 ### Benchmark
@@ -27,6 +28,7 @@ find      0.001608   0.000010   0.001618 (  0.001619)
 bubble       9.085337   0.027637   9.112974 (  9.151190)
 bucket       1.767285   0.002121   1.769406 (  1.771377)
 insertion    1.678509   0.005159   1.683668 (  1.691017)
+selection   14.941617   0.057260  14.998877 ( 15.035731)
 ```
 
 # References
